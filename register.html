@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+</head>
+<body>
+    <h1>Institute Registration Form</h1>
+    <form action="thankyou.html" method="get">
+        <label for="name">Full Name</label><br>
+        <input type="text" id="name" name="name" placeholder="Enter your full name" required><br><br>
+
+        <label for="password">Password</label><br>
+        <input type="password" id="password" name="password" placeholder="Enter your password" required><br><br>
+
+        <label for="dob">Date of Birth</label><br>
+        <input type="date" id="dob" name="dob" required><br><br>
+
+        <label for="gender">Gender</label><br>
+        <input type="radio" id="male" name="gender" value="Male" required>
+        <label for="male">Male</label><br>
+        <input type="radio" id="female" name="gender" value="Female" required>
+        <label for="female">Female</label><br>
+        <input type="radio" id="other" name="gender" value="Other" required>
+        <label for="other">Other</label><br><br>
+
+        <label for="email">Email</label><br>
+        <input type="text" id="email" name="email" placeholder="Enter your email" required><br><br>
+
+        
+        <label for="courses">Courses Interested</label><br>
+        <input type="checkbox" id="course1" name="courses" value="Web Development">
+        <label for="course1">Web Development</label><br>
+        <input type="checkbox" id="course2" name="courses" value="Data Science">
+        <label for="course2">Data Science</label><br>
+        <input type="checkbox" id="course3" name="courses" value="AI & ML">
+        <label for="course3">AI & ML</label><br>
+        <input type="checkbox" id="course4" name="courses" value="App Development">
+        <label for="course4">App Development</label><br>
+        <input type="checkbox" id="course5" name="courses" value="Cloud Computing">
+        <label for="course5">Cloud Computing</label><br><br>
+
+        <label for="qualification">Qualification</label><br>
+        <select id="qualification" name="qualification">
+            <option value="highschool">High School</option>
+            <option value="bachelor">Bachelor's Degree</option>
+            <option value="master">Master's Degree</option>
+        </select><br><br>
+
+        <button type="button" onclick="alert('Please review your details before submission.')">Review</button>
+        <button type="submit">Submit</button>
+        <button type="reset">Reset</button>
+    </form>
+</body>
+</html>
