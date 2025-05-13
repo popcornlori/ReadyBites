@@ -1,0 +1,31 @@
+<div class="carousel">
+  <button id="prev" class="arrow">‹</button>
+  <div class="carousel-container">
+    <div class="carousel-item">Item 1</div>
+    <div class="carousel-item">Item 2</div>
+    <div class="carousel-item">Item 3</div>
+  </div>
+  <button id="next" class="arrow">›</button>
+</div>
+
+<style>
+  .carousel { display: flex; align-items: center; overflow: hidden; }
+  .carousel-container { display: flex; transition: transform 0.5s ease-in-out; }
+  .carousel-item { min-width: 300px; margin: 10px; }
+  .arrow { cursor: pointer; font-size: 24px; }
+</style>
+
+<script>
+  const container = document.querySelector('.carousel-container');
+  let index = 0;
+  
+  document.getElementById('next').addEventListener('click', () => {
+    index = Math.min(index + 1, container.children.length - 1);
+    container.style.transform = `translateX(-${index * 320}px)`;
+  });
+
+  document.getElementById('prev').addEventListener('click', () => {
+    index = Math.max(index - 1, 0);
+    container.style.transform = `translateX(-${index * 320}px)`;
+  });
+</script>

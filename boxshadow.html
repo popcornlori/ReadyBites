@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            display:flex;
+            flex-direction: row;
+            
+            justify-content:space-between;
+            background-color: aqua;
+            animation: harry;
+            animation-duration: 4s;
+            animation-fill-mode: alternate;
+            
+
+        }
+        .card{
+            border-width: 2px;
+            border-style:solid;
+            border-color: black;
+
+            flex:1;
+            width: 250px;
+            height: 250px;
+            margin:10px;
+            padding:10px;
+            background-color: yellowgreen;
+            box-shadow: 5px 5px yellow;
+            animation: iop;
+            animation-duration: 4s;
+            animation-fill-mode: alternate;
+            position:relative;
+            width: 250px;
+             height: 250px;
+
+            
+            
+
+
+            
+            
+            
+
+        }
+
+        @keyframes harry {
+
+            from{
+                background-color: aqua;
+            }
+            to{
+                background-color: blue;
+            }
+            
+        }
+
+        @keyframes iop {
+
+            
+    0% {
+        top: 0;
+        right: 0px; 
+    }
+    25% {
+        top: 250px;
+        right: 0px; 
+    }
+    75% {
+        top: 250px;
+        right: 250px; 
+    }
+    100% {
+        top: 0px;
+        right: 250px; 
+    }
+}
+
+        
+
+            
+        
+        .card h2{
+            text-shadow:5px 5px pink;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="container">
+        <div class="card" id="card-1">
+           <h2>This is C++ Course</h2>
+           <p>I have started C++ course which does not mean that we will stop this course. We will continue this course to completion. Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque laudantium, doloremque enim repellat impedit autem nostrum facilis odio omnis optio voluptates beatae mollitia temporibus voluptas consequuntur harum animi totam molestiae labore architecto ratione qui!</p>
+        </div>
+        <div class="card" id="card-2">
+            <h2>This is HTML Course</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis placeat doloribus molestiae velit ipsum, aliquam officia ratione excepturi in officiis, incidunt quo est pariatur tempore ex, distinctio nostrum! Sint non doloribus rem obcaecati sunt.</p>
+        </div>
+        <div class="card" id="card-3">
+           <h2>Card3</h2>
+           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. In tenetur molestiae, placeat quas perferendis quibusdam atque omnis distinctio obcaecati dolor, tempora unde deserunt iure nam. Iste labore eveniet esse deserunt?</p>
+        </div>
+    </div>
+</body>
+</html>

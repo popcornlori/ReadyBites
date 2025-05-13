@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        body{
+            
+            height: 100vh; 
+            display: flex;
+            justify-content: center; 
+            align-items: center; 
+    }
+
+    .gridcont{
+
+        display :grid;
+        grid-template-columns: 200px 200px;
+        grid-template-rows: 200px 200px;
+        gap: 0px;
+        
+        
+
+
+    }
+
+        
+        .main{
+            
+            border-width: 2px;
+            border-style: solid;
+            border-color: black;
+            height: 200px;
+            width: 200px;
+            margin-top: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            
+
+            
+        }
+
+
+    </style>
+</head>
+<body>
+
+    <div class ="gridcont">
+    
+    <div class ="main"id ="box1">
+        
+        <p>Box1</p>
+
+    </div>
+    <div class ="main">
+        <p>box2</p>
+    </div>
+    <div class ="main">
+        <p>Box-3</p>
+    </div>
+    <div class ="main">
+        <p>Box-4</p>
+    
+</div>
+</div>
+
+<script>
+    let S1 = document.getElementById("box1");
+    S1.addEventListener("mouseleave",function(){
+        r2=Math.floor(Math.random()*(255-0)+0);
+        r3=Math.floor(Math.random()*(255-0)+0);
+        r4=Math.floor(Math.random()*(255-0)+0)
+        S1.style.backgroundColor=`rgb(${r2},${r3},${r4})`;
+        let r =Math.floor(Math.random() *100);
+        S1.innerHTML=`<p>${r}</p>`;
+    
+    });
+
+
+    
+</script>
+
+</body>
+</html>

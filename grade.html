@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Grade Calculator</title>
+</head>
+<body>
+    <h2>Grade Calculator</h2>
+    <script>
+        
+        var mark = 85; 
+
+        
+        var grade;
+        if (mark >= 90) {
+            grade = "A+";
+        } else if (mark >= 80) {
+            grade = "A";
+        } else if (mark >= 70) {
+            grade = "B";
+        } else if (mark >= 60) {
+            grade = "C";
+        } else if (mark >= 50) {
+            grade = "D";
+        } else {
+            grade = "F";
+        }
+
+        
+        document.write(`Mark: ${mark}<br>`);
+        document.write(`Grade: ${grade}`);
+    </script>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fixed Position In CSS</title>
+    <style>
+        .box{
+            border: 2px solid red;
+            display: inline-block;
+            width: 150px;
+            height: 150px;
+            margin: 2px;
+        }
+        #box3{
+            position: fixed;
+            bottom:0px;
+            right: 4px;
+        }
+    </style>
+
+    <script>
+
+        let number = 2;
+
+        switch (number) {
+            case 1:
+                console.log("This is January");
+                
+                break;
+            case 2 :
+                console.log("This is February")
+            break;
+        
+            default:
+                console.log("InvaliD Entry");
+                break;
+        }
+
+        let students={
+            name:"Rohan",
+            Age:21,
+            subject:"Science",
+            name2:"Adi",
+            Age:21,
+            subject:"Math",
+        }
+
+        console.log(students.name);
+
+        function add(num1,num2){
+            d=num1+num2;
+            return d;
+        }
+
+        let val = add(3,5);
+        console.log(val);
+
+
+    </script>
+</head>
+<body>
+    <div class="box" id="box1"></div>
+    <div class="box" id="box2"></div>
+    <div class="box" id="box3"></div>
+    <div class="box" id="box4"></div>
+</body>
+</html>

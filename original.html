@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Open and Close Window</title>
+</head>
+<body>
+
+  <script>
+    
+    function openAndClose() {
+      
+      var newWindow = window.open(location.href, "_blank");
+
+      
+      window.close();
+
+      
+      newWindow.document.writeln("The original window has been closed, and a new identical window is opened.");
+    }
+  </script>
+
+  
+  <button onclick="openAndClose()">Open Identical Window and Close Original</button>
+
+</body>
+</html>

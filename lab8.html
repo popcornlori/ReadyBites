@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 50px;
+        }
+        form {
+            width: 300px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        input {
+            width: 100%;
+            padding: 8px;
+            margin: 5px 0;
+        }
+        .error {
+            color: red;
+            font-size: 12px;
+        }
+        button {
+            background-color: blue;
+            color: white;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Student Form</h2>
+    <form id="studentForm">
+        <label>Roll No:</label>
+        <input type="text" id="rollno"><br>
+        <span id="rollnoError" class="error"></span><br>
+
+        <label>Email ID:</label>
+        <input type="text" id="email"><br>
+        <span id="emailError" class="error"></span><br>
+
+        <label>Contact No:</label>
+        <input type="text" id="contact"><br>
+        <span id="contactError" class="error"></span><br>
+
+        <button type="submit">Submit</button>
+    </form>
+
+    <script>
+        document.getElementById("studentForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            
+            let rollno = document.getElementById("rollno").value.trim();
+            let email = document.getElementById("email").value.trim();
+            let contact = document.getElementById("contact").value.trim();
+
+            
+            let isValid = true;
+            document.getElementById("rollnoError").innerText = "";
+            document.getElementById("emailError").innerText = "";
+            document.getElementById("contactError").innerText = "";
+
+            if (rollno === "") {
+                document.getElementById("rollnoError").innerText = "Roll No cannot be blank";
+                isValid = false;
+            }
+
+            if (email === "" || !email.includes("@")) {
+                document.getElementById("emailError").innerText = "Enter a valid Email ID";
+                isValid = false;
+            }
+
+            if (contact === "" || !/^\d{10}$/.test(contact)) {
+                document.getElementById("contactError").innerText = "Enter a 10-digit Contact No";
+                isValid = false;
+            }
+
+            if (isValid) {
+                window.location.href = "thankyou.html";
+            }
+        });
+    </script>
+
+</body>
+</html>

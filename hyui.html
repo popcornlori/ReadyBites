@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Food Delivery App</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f8f8f8;
+      overflow-x: hidden;
+    }
+    .welcome {
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #ff4d4d;
+      color: white;
+      font-size: 3rem;
+      animation: slideUp 2s ease-in-out forwards;
+      animation-delay: 2s;
+    }
+
+    @keyframes slideUp {
+      to {
+        transform: translateY(-100%);
+        opacity: 0;
+        visibility: hidden;
+      }
+    }
+
+    .restaurants {
+      display: none;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding: 20px;
+      animation: fadeIn 1s ease-in-out forwards;
+      animation-delay: 4s;
+    }
+
+    .restaurant {
+      background: white;
+      margin: 10px;
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      width: 200px;
+      text-align: center;
+      cursor: pointer;
+      transition: transform 0.3s;
+    }
+    .restaurant:hover {
+      transform: scale(1.05);
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; display: flex; }
+    }
+
+    .menu-page {
+      display: none;
+      padding: 20px;
+      height: 100vh;
+      overflow-y: auto;
+      background-color: #fff;
+    }
+    .menu-page.active {
+      display: block;
+    }
+    .menu-page h2 {
+      text-align: center;
+    }
+    .menu {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .menu-item {
+      background: white;
+      margin: 10px;
+      padding: 15px;
+      border-radius: 10px;
+      width: 200px;
+      text-align: center;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    .menu-item img {
+      width: 100%;
+      border-radius: 10px;
+    }
+    .menu-item button {
+      margin-top: 10px;
+      padding: 8px 12px;
+      border: none;
+      background: #ff4d4d;
+      color: white;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    .rating {
+      margin-top: 5px;
+      color: gold;
+    }
+    .back-button {
+      margin: 10px auto;
+      display: block;
+      padding: 10px 20px;
+      background: #555;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+
+    @media (max-width: 768px) {
+      .restaurant, .menu-item {
+        width: 80%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="welcome" id="welcome">Welcome to QuickEats!</div>
+  <div class="restaurants" id="restaurants"></div>
+
+  <script>
+    const restaurantList = [];
+    for (let i = 1; i <= 20; i++) {
+      restaurantList.push(`Restaurant ${i}`);
+    }
+
+    const foodItems = {};
+    restaurantList.forEach((restaurant, index) => {
+      foodItems[restaurant] = [];
+      for (let j = 1; j <= 10; j++) {
+        foodItems[restaurant].push({
+          name: `${restaurant} Item ${j}`,
+          price: `$${(5 + j).toFixed(2)}`,
+          img: `https://via.placeholder.com/200?text=${encodeURIComponent(restaurant + ' Item ' + j)}`,
+          rating: '⭐⭐⭐⭐'
+        });
+      }
+    });
+
+    const restaurantsDiv = document.getElementById('restaurants');
+    restaurantList.forEach(name => {
+      const div = document.createElement('div');
+      div.className = 'restaurant';
+      div.innerText = name;
+      div.onclick = () => showRestaurantPage(name);
+      restaurantsDiv.appendChild(div);
+
+      const menuPage = document.createElement('div');
+      menuPage.className = 'menu-page';
+      menuPage.id = `restaurant-${name.replace(/\s+/g, '-')}`;
+
+      const backBtn = document.createElement('button');
+      backBtn.className = 'back-button';
+      backBtn.textContent = 'Back to Restaurants';
+      backBtn.onclick = () => {
+        menuPage.classList.remove('active');
+        restaurantsDiv.style.display = 'flex';
+      };
+
+      const title = document.createElement('h2');
+      title.textContent = name;
+
+      const menuDiv = document.createElement('div');
+      menuDiv.className = 'menu';
+
+      foodItems[name].forEach(item => {
+        const itemDiv = document.createElement('div');
+        itemDiv.className = 'menu-item';
+        itemDiv.innerHTML = `
+          <img src="${item.img}" alt="${item.name}" />
+          <h4>${item.name}</h4>
+          <p>${item.price}</p>
+          <div class="rating">${item.rating}</div>
+          <button>Add to Cart</button>
+        `;
+        menuDiv.appendChild(itemDiv);
+      });
+
+      menuPage.appendChild(backBtn);
+      menuPage.appendChild(title);
+      menuPage.appendChild(menuDiv);
+      document.body.appendChild(menuPage);
+    });
+
+    function showRestaurantPage(name) {
+      document.getElementById('restaurants').style.display = 'none';
+      document.querySelectorAll('.menu-page').forEach(page => page.classList.remove('active'));
+      const pageId = `restaurant-${name.replace(/\s+/g, '-')}`;
+      document.getElementById(pageId).classList.add('active');
+    }
+
+    setTimeout(() => {
+      restaurantsDiv.style.display = 'flex';
+    }, 4000);
+  </script>
+</body>
+</html>

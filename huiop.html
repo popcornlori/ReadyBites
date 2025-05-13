@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Current Date and Time</h2>
+    <div id="datetime"></div>
+</body>
+
+
+<script>
+
+    function updateTime(){
+        let now = new Date();
+        let dateTimeString = now.toLocaleString();
+        document.getElementById('datetime').textContent =dateTimeString;
+
+    }
+
+    setInterval(updateTime,1000);
+    updateTime();
+
+
+    let sum =(a,b) =>{
+        console.log(a+b);
+    }
+    sum(2,3);
+
+    let obj1={
+        greeting:"Good Morning",
+        names:["Harry","Raj","Suresh","Pal"],
+        speak() {
+            this.names.forEach((i) =>{
+                console.log( this.greeting + i);
+
+            });
+        }
+
+     
+
+        
+    }
+    obj1.speak();
+
+    let a1=50;
+    let a2=60;
+
+    let z= a1 + (a2-a1)*Math.random();
+    console.log(z);
+</script>
+</html>

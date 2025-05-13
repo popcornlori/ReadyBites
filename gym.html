@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+        body{
+            background-image: url(https://images.unsplash.com/photo-1517836357463-d25dfeac3438?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+        }
+
+        .navbar{
+            background-color: black;
+            height: 70px;
+            display: flex; /* Align items horizontally */
+            justify-content: space-between; /* Space between elements */
+            align-items: center;
+            padding-right: 20px;
+        }
+
+        .navbar ul{
+            overflow: auto;
+
+        }
+
+        .navbar li{
+            float: left;
+            list-style: none;
+            padding:5px;
+        }
+
+        .navbar li a{
+
+            text-decoration: none;
+        }
+
+        .btn{
+            border-width: 2px;
+            border-style: solid;
+            border-color:black;
+            background-color:black;
+            color:azure;
+            border-radius: 10px;
+            cursor:pointer;
+            
+        }
+
+        
+            .container {
+        border: 2px solid white;
+        margin: 106px 80px;
+        padding: 75px;
+        width: 33%;
+        border-radius: 28px;
+        background-color: black;
+    }
+
+    #eor{
+
+        width:300px;
+        background-color: aliceblue;
+        border:2px solid black;
+        color:black;
+        font-size:25px;
+        margin-top: 5px ;
+        
+
+    }
+
+    .form-group{
+
+        display:flex;
+        justify-content: center;
+        align-items: center;
+            
+    }
+    .navbar p{
+        overflow: auto;
+        color:white;
+        float: right;
+    }
+
+    
+    
+             
+    
+
+        
+
+        .form-group input{
+            display: block;
+            text-align:centre;
+            width:300px;
+            padding:1px;
+            border: 2px solid black;
+            margin: 11px auto;
+            font-size: 25px;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body style="background-color:grey;">
+
+
+ <nav class="navbar">
+
+    
+
+    <ul>
+        <li ><a href="#"  button class ="btn">Home</a></li>
+        <li ><a href="about.html"  button class ="btn">About Us</a></li>
+        <li ><a href="#"  button class ="btn">Fitness Calculator</a></li>
+        <li ><a href="#"  button class ="btn">Contact us</a></li>
+        
+    </ul>
+
+    <p>Beyond Fitness, Beyond Ordinary</p>
+
+   
+ </nav>
+
+ <div class="container">
+
+    <h3 style="color: white; font-size:30px;">Please Enter Your Details Here</h3>
+
+ <form action="noaction.php" class: bio>
+    
+    <div class="form-group">
+        <input type="text" name="" placeholder="Enter your Name">
+    </div>
+    <div class="form-group">
+        <input type="text" name="Locality"placeholder="Enter your Locality">
+    </div>
+    <div class="form-group">
+        <input type="text" name="" placeholder="Enter your Age">
+    </div>
+    <div class="form-group">
+        <input type="text" name="" placeholder="Enter your Gender">
+    </div>
+    <div class="form-group" >
+    <button class="btn" id="eor">Submit</button>
+    </div>
+
+</form>
+
+</div>
+    
+</body>
+</html>

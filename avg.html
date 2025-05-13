@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Average of Ten Numbers</title>
+</head>
+<body>
+    <h2>Calculate Average</h2>
+    <script>
+        
+        var numbers = [10, 50, 30, 40, 50, 100, 70, 80, 90, 100];
+
+        
+        var sum = 0;
+
+        
+        for (var i = 0; i < numbers.length; i=i+1) {
+            sum =sum + numbers[i];
+        }
+
+        
+        var average = sum / numbers.length;
+
+        
+        document.write("Numbers: " + numbers.join(", ") + "<br>");
+        document.write("Average: " + average);
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>FR Units Example</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: sans-serif;
+    }
+
+    .grid-container {
+      display: grid;
+      grid-template-columns: 1fr 2fr 1fr; /* Different fractions */
+      height: 200px;
+      width: 100vw; /* Full viewport width */
+    }
+
+    .box {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    .box1 { background-color: #f44336; } /* red */
+    .box2 { background-color: #2196f3; } /* blue */
+    .box3 { background-color: #4caf50; } /* green */
+  </style>
+</head>
+<body>
+
+  <div class="grid-container">
+    <div class="box box1">1fr</div>
+    <div class="box box2">2fr</div>
+    <div class="box box3">1fr</div>
+  </div>
+
+</body>
+</html>

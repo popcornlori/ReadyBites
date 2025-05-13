@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="myParagraph">This is the original text.</p>
+    <button onclick="hidetext()">Change Text</button>
+    <button onclick ="changetext()">Text Change</button>
+    <h2>Current Date and Time</h2>
+    <div id="datetime"></div>
+</body>
+
+<script>
+    function hidetext() {
+        let element = document.getElementById('myParagraph');
+
+        if(element.style.display === "none"){
+            element.style.display = "block";
+                }
+
+                else{
+                    element.style.display ="none";
+                }
+    }
+
+    function changetext() {
+        let element = document.getElementById("myParagraph");
+        {
+            if(element.innerText === "This is the original text"){
+
+                element.innerText ="Hello World";
+
+            }
+
+            else{
+                element.innerText="This is the original text";
+            }
+        }
+
+    }
+
+    let element = document.createElement("div");
+    element.textContent = "Hello, this is a dynamically created div!";
+    element.classList.add("my-class");
+    document.body.appendChild(element);
+    console.log(element);
+
+    let dt = new Date(2050,6,3,12,20,56);
+    console.log("The current time is",dt);
+
+    let yr= dt.getFullYear();
+    console.log(yr);
+
+</script>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="main" class="container">
+        <ul id="nav">
+            <li class="Uio">Home</li>
+            <li class ="Uio">About</li>
+            <li class ="uio">Services</li>
+            <li class ="uio">More About Us</li>
+            <li class ="uio">Contact Us</li>
+        </ul>
+        <button onclick="changecolor()">Change color</button>
+    </div>
+    <div class="container">
+        Another Container
+    </div>
+
+    <script>
+
+        let main = document.getElementById('main');
+        console.log(main);
+        
+        let nav = document.querySelectorAll(".uio");
+        nav.forEach(item =>{
+            item.style.color="blue";
+        });
+        
+        console.log(nav);
+        
+        let containers = document.getElementsByClassName('.container');
+        console.log(containers);
+        let sel = document.querySelectorAll('#nav > li');
+        console.log(sel);
+        function changecolor(){
+            let gio = document.querySelectorAll(".uio");
+            gio.forEach(item =>{
+                item.style.color ="pink";
+            });
+        }
+
+        
+        
+    </script>
+</body>
+</html>

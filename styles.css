@@ -1,0 +1,26 @@
+body {
+    font-family: cursive;
+    
+    
+    
+    
+}
+
+#about-us{
+
+border-width: 5px;
+border-style:solid;
+border-color: black;
+background-color:rgb(236,171,204);
+padding:5px;
+border-radius: 7px;
+
+}
+
+.course-section{
+    background-color: bisque;
+    border-width:5px;
+    border-style:solid;
+    border-color:black;
+    border-radius: 7px;
+}

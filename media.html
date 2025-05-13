@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+
+    <style>
+
+        
+
+
+        #box-1{
+            border-width: 2px;
+            border-style: solid;
+            border-color:black;
+            width: 100px;
+            height: 100px;
+            background-color: blueviolet;
+        }
+
+        #box-2{
+            border-width: 2px;
+            border-style: solid;
+            border-color:black;
+            width:100px;
+            height: 100px;
+            background-color:yellow;
+        }
+
+        #box-3{
+            border-width: 2px;
+            border-style: solid;
+            border-color:black;
+            width:100px;
+            height: 100px;
+            background-color: blue;
+        }
+
+        #box-4{
+            
+            border-width: 2px;
+            border-style: solid;
+            border-color:black;
+            width:100px;
+            height: 100px;
+            background-color: aqua;
+        }
+
+        @media  only screen and (max-width:300px) {
+            #box-1{
+                display: block;
+                background-color: cyan;
+            }
+            
+        } 
+        @media only screen and (min-width:300px){
+            #box-2{
+                display: block;
+                background-color:orange;
+            }
+
+        }
+
+        @media(min-width:500px) and (max-width:800px){
+            #box-3{
+                background-color:green;
+            }
+        }
+
+        @media(min-width:500px) and (max-width:800px){
+            #box-4{
+                background-color: aquamarine;
+            }
+        }
+            
+        
+        
+    </style>
+
+    <body>
+
+    
+        <div class="box" id="box-1">Mai ek iPhone hoon</div>
+        <div class="box" id="box-2">Mai ek Tablet hoon</div>
+        <div class="box" id="box-3">Mai ek desktop computer hoon</div>
+        <div class="box" id="box-4">Mai ek widescreen computer hoon</div>
+    </body>
+
+    <script>
+        console.log("Hello");
+        var num1 =8;
+        var num2 =4;
+        console.log("The incremented value is"+(num1++));
+        console.log("The incremented value is"+(++num1));
+        var name="Harry";
+        var course="This is Coding Camp";
+        var temp =`${name} has enrolled's in a "course" ${course}`;
+        console.log(temp);
+        console.log(name+course);
+        console.log("This name is\t"+name);
+
+
+    </script>
+    
+
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Simple Calculator</title>
+</head>
+<body>
+
+  <h2>Simple Calculator</h2>
+
+  <!-- Operand 1 -->
+  <label for="operand1">Operand 1:</label>
+  <input type="number" id="operand1"><br><br>
+
+  <!-- Operand 2 -->
+  <label for="operand2">Operand 2:</label>
+  <input type="number" id="operand2"><br><br>
+
+  <!-- Result -->
+  <label for="result">Result:</label>
+  <input type="text" id="result" readonly><br><br>
+
+  <!-- Buttons -->
+  <button onclick="addNumbers()">Add</button>
+  <button onclick="subtractNumbers()">Subtract</button>
+
+  <script>
+    // Function to perform addition
+    function addNumbers() {
+      var op1 = parseFloat(document.getElementById('operand1').value);
+      var op2 = parseFloat(document.getElementById('operand2').value);
+
+      if (isNaN(op1) || isNaN(op2)) {
+        alert("Please enter valid numbers!");
+        return;
+      }
+
+      var sum = op1 + op2;
+      document.getElementById('result').value = sum;
+    }
+
+    // Function to perform subtraction
+    function subtractNumbers() {
+      var op1 = parseFloat(document.getElementById('operand1').value);
+      var op2 = parseFloat(document.getElementById('operand2').value);
+
+      if (isNaN(op1) || isNaN(op2)) {
+        alert("Please enter valid numbers!");
+        return;
+      }
+
+      var difference = op1 - op2;
+      document.getElementById('result').value = difference;
+    }
+  </script>
+
+</body>
+</html>

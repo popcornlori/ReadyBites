@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Calculator</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; margin-top: 50px; }
+        input { margin: 10px; padding: 5px; width: 100px; }
+        button { margin: 5px; padding: 10px; cursor: pointer; }
+    </style>
+</head>
+<body>
+    <h2>Simple Calculator</h2>
+    <input type="number" id="operand1" placeholder="Operand 1">
+    <input type="number" id="operand2" placeholder="Operand 2">
+    <br>
+    <button onclick="calculate('add')">Add</button>
+    <button onclick="calculate('subtract')">Subtract</button>
+    <br>
+    <input type="text" id="result" placeholder="Result" readonly>
+
+    <script>
+        function calculate(operation) {
+            let num1 = parseFloat(document.getElementById('operand1').value);
+            let num2 = parseFloat(document.getElementById('operand2').value);
+            let resultField = document.getElementById('result');
+            
+            if (isNaN(num1) || isNaN(num2)) {
+                resultField.value = 'Invalid Input';
+                return;
+            }
+            
+            if (operation === 'add') {
+                resultField.value = num1 + num2;
+            } else if (operation === 'subtract') {
+                resultField.value = num1 - num2;
+            }
+        }
+    </script>
+</body>
+</html>

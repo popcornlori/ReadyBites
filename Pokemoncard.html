@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+        .main{
+            height: 100%;
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
+        .card{
+            height: 150px;
+            width: 100px;
+            border-width: 1px;
+            border-style: solid;
+            border-color: black;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow:hidden;
+        }
+
+        .card img{
+            width:100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        
+    </div>
+    
+</body>
+<script>
+    let io = document.querySelector(".main");
+    let arr=["https://i.pinimg.com/736x/e9/fd/41/e9fd4183ef621c32d422629ab498307a.jpg","https://i.pinimg.com/736x/4f/82/ac/4f82ac41232ac71d8b2f434258aff7af.jpg","https://i.pinimg.com/736x/19/40/43/1940437ac525034b25f73515661c4179.jpg","https://i.pinimg.com/736x/3d/36/ce/3d36ce0c2d81d0481476f63e1e5f38c0.jpg",]
+    var s="";
+    for(i=0;i<=48;i=i+1){
+        let r= Math.floor(Math.random()*4);
+        s+= `<div class="card">
+            <img src="${arr[r]}">
+
+
+        </div>`
+
+    }
+    io.innerHTML=s;
+    let cards = document.querySelectorAll('.card');
+
+        
+        cards.forEach(card => {
+            card.addEventListener('click', function() {
+                
+                cards.forEach(c => {
+                    c.style.backgroundColor = 'blue';
+                });
+            });
+        });
+</script>
+
+</html>

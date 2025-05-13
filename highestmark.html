@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Marks</title>
+</head>
+<body>
+    <h2>Student Data</h2>
+
+    <script>
+        
+        var students = [
+            { rollno: 1, name: "Alice", marks: 85 },
+            { rollno: 2, name: "Bob", marks: 92 },
+            { rollno: 3, name: "Charlie", marks: 78 },
+            { rollno: 4, name: "David", marks: 95 },
+            { rollno: 5, name: "Eva", marks: 88 },
+            { rollno: 6, name: "Frank", marks: 72 },
+            { rollno: 7, name: "Grace", marks: 80 },
+            { rollno: 8, name: "Hannah", marks: 68 },
+            { rollno: 9, name: "Ivy", marks: 91 },
+            { rollno: 10, name: "Jack", marks: 76 }
+        ];
+
+        
+        function findHighestMarkStudent() {
+            var highest = students[0]; 
+            for (var i = 1; i < students.length; i++) {
+                if (students[i].marks > highest.marks) {
+                    highest = students[i]; 
+                }
+            }
+            return highest;
+        }
+
+        
+        function findLowestMarkStudent() {
+            var lowest = students[0]; 
+            for (var i = 1; i < students.length; i++) {
+                if (students[i].marks < lowest.marks) {
+                    lowest = students[i]; 
+                }
+            }
+            return lowest;
+        }
+
+        
+        function calculateAverageMarks() {
+            var total = 0; 
+            for (var i = 0; i < students.length; i++) {
+                total += students[i].marks; 
+            }
+            return total / students.length; 
+        }
+
+        
+        var highestMarkStudent = findHighestMarkStudent();
+        var lowestMarkStudent = findLowestMarkStudent();
+        var averageMarks = calculateAverageMarks();
+
+        
+        document.writeln("<h3>Student with Highest Marks:</h3>");
+        document.writeln("Roll No: " + highestMarkStudent.rollno + "<br>");
+        document.writeln("Name: " + highestMarkStudent.name + "<br>");
+        document.writeln("Marks: " + highestMarkStudent.marks + "<br><br>");
+
+        document.writeln("<h3>Student with Lowest Marks:</h3>");
+        document.writeln("Roll No: " + lowestMarkStudent.rollno + "<br>");
+        document.writeln("Name: " + lowestMarkStudent.name + "<br>");
+        document.writeln("Marks: " + lowestMarkStudent.marks + "<br><br>");
+
+        document.writeln("<h3>Average Marks:</h3>");
+        document.writeln("Average: " + averageMarks.toFixed(2) + "<br>");
+    </script>
+
+</body>
+</html>
